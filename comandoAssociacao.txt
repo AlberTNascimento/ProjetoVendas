@@ -1,0 +1,10 @@
+COMANDO DE ASSOCIACAO
+git remote add origin https://github.com/AlberTNascimento/ProjetoVendas.git
+COMANDO PARA SUBIR ARQUIVOS DO COMPUTADOR PARA O GITHUB
+git push  -u origin master 
+COMANDO PARA BAIXAR ARQUIVOS DO GITHUB PARA O COMPUTADOR
+abrir o github na pasta que deseja o retorno
+pegar o link da pagina no github
+git clone <URI do repositorio remoto>
+COMANDO PARA ATUALIZAAR OS REPOSITORIOS
+git pull origin master
