@@ -33,4 +33,11 @@ D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netc
 D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\VendasWebMvc.genruntimeconfig.cache
 D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\VendasWebMvc.csproj.CopyComplete
 D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\VendasWebMvc.csprojAssemblyReference.cache
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\bin\Debug\netcoreapp2.1\Properties\serviceDependencies.json
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\bin\Debug\netcoreapp2.1\Properties\serviceDependencies.local.json
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Create.cshtml.g.cs
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Delete.cshtml.g.cs
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Details.cshtml.g.cs
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Edit.cshtml.g.cs
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.cshtml.g.cs
 D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\VendasWebMvc.csproj.CoreCompileInputs.cache
