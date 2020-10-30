@@ -23,9 +23,7 @@ namespace VendasWebMvc.Data
         public void Seed()
         {
             // Teste para saber se existe já algum dado na BD
-            if (_context.Department.Any() || 
-                _context.Seller.Any() ||
-                _context.SalesRecord.Any())
+            if (_context.Department.Any() ||  _context.Seller.Any() || _context.SalesRecord.Any() )
             {
                 return;
             }
