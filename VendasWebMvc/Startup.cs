@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using VendasWebMvc.Data;
+using VendasWebMvc.Services;
 
 namespace VendasWebMvc
 {
@@ -42,6 +43,7 @@ namespace VendasWebMvc
 
             // Criando o services seeedingservice. Registra o serviço na aplicação.
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
 
         }
 
