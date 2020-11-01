@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using VendasWebMvc.Services;
+using VendasWebMvc.Models;
 
 namespace VendasWebMvc.Controllers
 {
@@ -15,7 +16,6 @@ namespace VendasWebMvc.Controllers
         public SellersController(SellerService sellerService)
         {
             _sellerService = sellerService;
-
         }
 
         public IActionResult Index()
@@ -26,7 +26,22 @@ namespace VendasWebMvc.Controllers
             return View(list);
         }
 
+        // Criando a ação create
+        public IActionResult Create()
+        {
+            // Chama a View chamada Create
+            return View();
+        }
 
+        // Criando a ação POST para gravar no BD
+        // Para indicar que o método abaixo é um POST devemos:
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
+        }
 
     }
 }
