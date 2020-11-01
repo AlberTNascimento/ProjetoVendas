@@ -15,6 +15,8 @@ namespace VendasWebMvc.Models
         public double BaseSalary { get; set; }
         // Fazendo associação das entidades Seller e Department - lado UM
         public Department Department { get; set; }
+        // Garantindo a integridade referencial - Foreign key not null (referential integrity)
+        public int DepartmentId { get; set; }
         // Fazendo associação das entidades Seller e SalesRecord - lado MUITOS e depois instanciando uma lista
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 

@@ -28,6 +28,8 @@ namespace VendasWebMvc.Services
         // Implementando um método para inserir novo vendedor no BD
         public void Insert(Seller obj)
         {
+            obj.Department = _context.Department.First();
+
             // Inserindo o objeto
             _context.Add(obj);
             // ;salvando o  objeto
