@@ -52,5 +52,32 @@ namespace VendasWebMvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // Criando uma ação para apresentação da confirmação do vendedor
+        public IActionResult Delete(int? id)
+        {
+            // Verificando se a consulta retornou nula - CASO SIM
+            if (id  == null)
+            {
+                return NotFound();
+            }
+            // Pegar objeto caso retorno diferente de nulo
+            var obj = _sellerService.FindById(id.Value);
+            // Verificar se o objeto é nulo
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            // Caso retorno seja encontrado corretamente
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _sellerService.Remove(id);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

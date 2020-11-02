@@ -34,5 +34,22 @@ namespace VendasWebMvc.Services
             _context.SaveChanges();
         }
 
+        // Método para pesquisar vendedor por ID
+        public Seller FindById(int id)
+        {
+            return _context.Seller.FirstOrDefault(obj => obj.Id == id);
+        }
+
+        // Método para remover vendedor passando o id pesquisado como parâmetro
+        public void Remove(int id)
+        {
+            // Criando uma variável para chamarmos o objeto pesquisado pelo ID
+            var obj = _context.Seller.Find(id);
+            // Removendo o objeto
+            _context.Seller.Remove(obj);
+            // Atualizando o BD
+            _context.SaveChanges();
+        }
+
     }
 }

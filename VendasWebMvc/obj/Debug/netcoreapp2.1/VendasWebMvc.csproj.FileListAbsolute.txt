@@ -43,3 +43,4 @@ D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netc
 D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\VendasWebMvc.csproj.CoreCompileInputs.cache
 D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Index.cshtml.g.cs
 D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Create.cshtml.g.cs
+D:\Projeto CSharp Curso Completo\Vendas\VendasWebMvc\VendasWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Delete.cshtml.g.cs
