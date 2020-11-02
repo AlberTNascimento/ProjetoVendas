@@ -10,7 +10,7 @@ namespace VendasWebMvc.Services
     public class SellerService
     {
 
-        // Criando uma dependência para a classe VendasWebMvcContext.cs
+        // Criando uma dependência para a classe SellerWebMvcContext.cs
         private readonly VendasWebMvcContext _context;
 
         // Criando um construtor para a injeção de dependência
@@ -28,8 +28,6 @@ namespace VendasWebMvc.Services
         // Implementando um método para inserir novo vendedor no BD
         public void Insert(Seller obj)
         {
-            obj.Department = _context.Department.First();
-
             // Inserindo o objeto
             _context.Add(obj);
             // ;salvando o  objeto

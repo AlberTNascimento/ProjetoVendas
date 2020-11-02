@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using VendasWebMvc.Services;
 using VendasWebMvc.Models;
+using VendasWebMvc.Models.ViewModels;
 
 namespace VendasWebMvc.Controllers
 {
@@ -12,10 +13,14 @@ namespace VendasWebMvc.Controllers
     {
         // Declarando dependência para o SellerService
         private readonly SellerService _sellerService;
-        // Criando o construtor do sellerscontroller recebendo o sellerservice
-        public SellersController(SellerService sellerService)
+        // Declarando dependência para o DepartmentService
+        private readonly DepartmentService _departmentService;
+
+        // Criando o construtor do sellerscontroller recebendo o sellerservice + acrescentar DepartmentService ao construtor
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
             _sellerService = sellerService;
+            _departmentService = departmentService;
         }
 
         public IActionResult Index()
@@ -29,8 +34,12 @@ namespace VendasWebMvc.Controllers
         // Criando a ação create
         public IActionResult Create()
         {
-            // Chama a View chamada Create
-            return View();
+            // Carregando os departments
+            var departments = _departmentService.FindAll();
+            // Instanciar o objeto ViewModel
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            // Chama a View chamada Create + passar viewModel para dentro da view
+            return View(viewModel);
         }
 
         // Criando a ação POST para gravar no BD

@@ -44,6 +44,7 @@ namespace VendasWebMvc
             // Criando o services seeedingservice. Registra o serviço na aplicação.
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
 
         }
 
