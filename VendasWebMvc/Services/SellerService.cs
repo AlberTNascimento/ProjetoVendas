@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VendasWebMvc.Data;
 using VendasWebMvc.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace VendasWebMvc.Services
 {
@@ -37,7 +38,11 @@ namespace VendasWebMvc.Services
         // Método para pesquisar vendedor por ID
         public Seller FindById(int id)
         {
-            return _context.Seller.FirstOrDefault(obj => obj.Id == id);
+            // Sem junção das tabelas
+            // return _context.Seller.FirstOrDefault(obj => obj.Id == id);
+            // Com junção das tabelas
+            return _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == id);
+
         }
 
         // Método para remover vendedor passando o id pesquisado como parâmetro

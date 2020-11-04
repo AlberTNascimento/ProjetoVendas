@@ -56,7 +56,7 @@ namespace VendasWebMvc.Controllers
         public IActionResult Delete(int? id)
         {
             // Verificando se a consulta retornou nula - CASO SIM
-            if (id  == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -78,6 +78,25 @@ namespace VendasWebMvc.Controllers
             _sellerService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+         
+            var obj = _sellerService.FindById(id.Value);
+         
+            if (obj == null)
+            {
+                return NotFound();
+            }
+         
+            return View(obj);
+        }
+
+
 
     }
 }
