@@ -8,6 +8,7 @@ using VendasWebMvc.Models;
 using VendasWebMvc.Models.ViewModels;
 using VendasWebMvc.Services.Exceptions;
 using System.Data;
+using System.Diagnostics;
 
 namespace VendasWebMvc.Controllers
 {
@@ -60,14 +61,14 @@ namespace VendasWebMvc.Controllers
             // Verificando se a consulta retornou nula - CASO SIM
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not provided" });
             }
             // Pegar objeto caso retorno diferente de nulo
             var obj = _sellerService.FindById(id.Value);
             // Verificar se o objeto é nulo
             if (obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
             }
             // Caso retorno seja encontrado corretamente
             return View(obj);
@@ -85,14 +86,14 @@ namespace VendasWebMvc.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not provided" });
             }
 
             var obj = _sellerService.FindById(id.Value);
 
             if (obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
             }
 
             return View(obj);
@@ -102,14 +103,14 @@ namespace VendasWebMvc.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not provided" });
             }
             
             var obj = _sellerService.FindById(id.Value);
 
             if ( obj == null )
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
             }
 
             List<Department> departments = _departmentService.FindAll();
@@ -123,21 +124,27 @@ namespace VendasWebMvc.Controllers
         {
             if (id != seller.Id)
             {
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
             }
             try
             {
                 _sellerService.Update(seller);
                 return RedirectToAction(nameof(Index));
             }
-            catch (NotFoundException)
+            catch (ApplicationException e)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = e.Message });
             }
-            catch (DbConcurrencyException)
+        }
+
+        public IActionResult Error(string message)
+        {
+            var viewModel = new ErrorViewModel
             {
-                return BadRequest();
-            }
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
         }
 
     }
